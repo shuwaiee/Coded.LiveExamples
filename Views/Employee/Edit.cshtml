@@ -1,0 +1,6 @@
+﻿@model EditFormModel
+
+@using (Html.BeginForm("Edit","Employee", FormMethod.Post)) {
+    @Html.EditorForModel();
+    <button type="submit" class="btn btn-primary">Edit</button>
+}

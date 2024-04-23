@@ -1,0 +1,14 @@
+﻿@model List<Employee>
+<div>
+    <p>We have @ViewBag.EmployeeCount Employee(s)</p>
+</div>
+   <a class="btn btn-primary" href="/Employee/Register">Add New</a>
+   @using (Html.BeginForm("Index","Employee", FormMethod.Get)) {
+       <input type="text" placeholder="Search" name="Search" value="@ViewBag.Search" />
+       <button class="btn btn-primary" type="submit">Search</button>
+   }
+@foreach(var e in Model)
+{
+    <p><a href="/Employee/Details/@e.Id"> @e.Name</a> <a href="/Employee/Edit/@e.Id">Edit</a></p>
+
+}
